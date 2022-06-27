@@ -38,9 +38,9 @@ trkfeat = []
 
 for track in tracks_get:
     features = requests.get('https://api.spotify.com/v1/audio-features/' + track['id'],
-                             headers=headers)
+                            headers=headers)
     features = features.json()
-    features.update({'track_name': track['name'],})
+    features.update({'track_name': track['name']})
     trkfeat.append(features)
 
 albumfeat = pd.DataFrame(trkfeat)
@@ -79,10 +79,10 @@ lyrics_get['song.lyrics'] = lyrics_get['song.lyrics'].str.replace('Embed', '', r
 lyrics_get['song.lyrics'] = lyrics_get['song.lyrics'].str.replace('\n', ' ', regex=True)
 
 album = albumfeat.join(lyrics_get).rename(columns={'track_name': 'Title',
-                                               'danceability': 'Danceability',
-                                               'energy' : 'Energy',
-                                               'speechiness': 'Speechiness',
-                                               'song.lyrics': 'Lyrics'})
+                                                   'danceability': 'Danceability',
+                                                   'energy' : 'Energy',
+                                                   'speechiness': 'Speechiness',
+                                                   'song.lyrics': 'Lyrics'})
 
 album.drop('song.title', axis=1, inplace=True)
 
@@ -100,7 +100,7 @@ class DatSet:
 
 #----------------------------------------------------------------#
 
-model_get = "j-hartmann/emotion-english-distilroberta-base"
+model_get = 'j-hartmann/emotion-english-distilroberta-base'
 tokenizer = AutoTokenizer.from_pretrained(model_get)
 model = AutoModelForSequenceClassification.from_pretrained(model_get)
 trainer = Trainer(model=model)
