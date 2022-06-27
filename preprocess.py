@@ -152,10 +152,10 @@ result['Sentiment'] = result['Sentiment'].str.capitalize()
 
 final_album = album.merge(result, on='Lyrics')
 
-shift = final_album.pop('Lyrics')
+shift1 = final_album.pop('Lyrics')
 shift2 = final_album.pop('Sentiment')
 
-final_album.insert(11, 'Lyrics', shift)
+final_album.insert(11, 'Lyrics', shift1)
 final_album.insert(1, 'Sentiment', shift2)
 
 final_album.to_csv('NewOrder_PCL_Sentiment.csv', index=False)
