@@ -88,7 +88,7 @@ album.drop('song.title', axis=1, inplace=True)
 
 #----------------------------------------------------------------#
 
-class DatSet:
+class DataSet:
     def __init__(self, token_txt):
         self.token_txt = token_txt
     
@@ -111,7 +111,7 @@ token_txt = tokenizer(lyrics,
                       truncation=True, 
                       padding=True)
 
-txt_inp = DatSet(token_txt)
+txt_inp = DataSet(token_txt)
 
 sentiment = trainer.predict(txt_inp)
 
