@@ -3,7 +3,7 @@ Measuring the qualities of an album using Spotify Track Audio Features plus lyri
 pre-processed, run through the model, and merged in a .py file while the Jupyter Notebook contains a presentable summary with visualizations.
 
 ## Requirements
-You can install any of the required libraries using `pip`.
+You can install any of the required libraries using `pip` like in the example below.
 
 `pip install pandas`
 
