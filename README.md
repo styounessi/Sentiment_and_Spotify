@@ -16,8 +16,7 @@ You can install any of the required libraries using `pip` like in the example be
 
 You will also need access to the [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) and [Genius](https://docs.genius.com/) APIs. 
 
-Any model can be used from [🤗 Hugging Face](https://huggingface.co/) with some modifications but `j-hartmann/emotion-english-distilroberta-base` is used in
-this case.
+Any suitable model can be used from [🤗 Hugging Face](https://huggingface.co/) with some modifications but `j-hartmann/emotion-english-distilroberta-base` is used in this case.
 
 ## Power, Corruption, & Lies by New Order
 ![PCL by New Order album art](https://cps-static.rovicorp.com/3/JPG_500/MI0003/239/MI0003239337.jpg)
