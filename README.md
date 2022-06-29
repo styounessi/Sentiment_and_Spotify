@@ -1,6 +1,6 @@
 # Album Sentiment & Spotify Audio Features
 Measuring the emotional qualities of an album using Spotify Track Audio Features with lyrical sentiment analysis via RoBERTa. The data is gathered,
-processed, and merged in a .py file and then used in a Jupyter Notebook to build a summary presentation. 
+processed, and merged in a `.py` file and then used in a Jupyter Notebook to build a summary presentation. 
 
 ## Requirements
 You can install any of the required libraries using `pip` like in the example below.
