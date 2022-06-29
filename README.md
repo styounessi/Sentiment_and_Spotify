@@ -14,7 +14,7 @@ You can install any of the required libraries using `pip` like in the example be
 - [NumPy](https://pypi.org/project/numpy/)
 - [LyricsGenius](https://pypi.org/project/lyricsgenius/)
 
-You will need access to the [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) and [Genius](https://docs.genius.com/) APIs. 
+You will also need access to the [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) and [Genius](https://docs.genius.com/) APIs. 
 
 Any model can be used from [🤗 Hugging Face](https://huggingface.co/) with some modifications but `j-hartmann/emotion-english-distilroberta-base` is used in
 this case.
