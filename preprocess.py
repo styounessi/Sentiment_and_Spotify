@@ -119,7 +119,6 @@ sentiment = trainer.predict(txt_inp)
 
 pred = sentiment.predictions.argmax(-1)
 label = pd.Series(pred).map(model.config.id2label)
-score = (np.exp(sentiment[0]) / np.exp(sentiment[0]).sum(-1, keepdims=True)).max(1)
 raw_score = (np.exp(sentiment[0]) / np.exp(sentiment[0]).sum(-1, keepdims=True))
 
 anger = []
