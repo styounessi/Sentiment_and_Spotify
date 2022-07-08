@@ -93,7 +93,7 @@ class DataSet:
         self.token_txt = token_txt
     
     def __len__(self):
-        return len(self.token_txt["input_ids"])
+        return len(self.token_txt['input_ids'])
     
     def __getitem__(self, idx):
         return {k: v[idx] for k, v in self.token_txt.items()}
