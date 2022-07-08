@@ -50,7 +50,7 @@ albumfeat['track_name'] = albumfeat['track_name'].str.replace('- 2015 Remaster',
 
 #----------------------------------------------------------------#
 
-gns = genius.Genius(open('.genius_token').read(),
+gns = genius.Genius(open('.genius_token', 'r'),
                     remove_section_headers=True,
                     skip_non_songs=True,
                     verbose=False,
