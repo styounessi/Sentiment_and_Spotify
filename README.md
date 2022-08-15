@@ -9,7 +9,7 @@ You can install any of the required libraries using `pip` like in the example be
 
 - [Plotly](https://pypi.org/project/plotly/)
 - [Pandas](https://pypi.org/project/pandas/)
-- [Torch](https://pypi.org/project/torch/)
+- [PyTorch](https://pypi.org/project/torch/) <-- Transformers works with [TensorFlow](https://www.tensorflow.org/install/pip) and [Flax](https://pypi.org/project/flax/) as well
 - [Requests](https://pypi.org/project/requests/)
 - [NumPy](https://pypi.org/project/numpy/)
 - [LyricsGenius](https://pypi.org/project/lyricsgenius/)
