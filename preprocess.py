@@ -78,10 +78,10 @@ scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('Embed', '
 scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('\n', ' ', regex=True)
 
 album = album_feat.join(scrub_lyrics).rename(columns={'track_name': 'Title',
-                                                   'danceability': 'Danceability',
-                                                   'energy' : 'Energy',
-                                                   'speechiness': 'Speechiness',
-                                                   'song.lyrics': 'Lyrics'})
+                                                      'danceability': 'Danceability',
+                                                      'energy' : 'Energy',
+                                                      'speechiness': 'Speechiness',
+                                                      'song.lyrics': 'Lyrics'})
 
 album.drop('song.title', axis=1, inplace=True)
 
