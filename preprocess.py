@@ -79,7 +79,7 @@ scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('\n', ' ',
 
 album = album_feat.join(scrub_lyrics).rename(columns={'track_name': 'Title',
                                                       'danceability': 'Danceability',
-                                                      'energy' : 'Energy',
+                                                      'energy': 'Energy',
                                                       'speechiness': 'Speechiness',
                                                       'song.lyrics': 'Lyrics'})
 
