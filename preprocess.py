@@ -63,25 +63,30 @@ get_lyrics.save_lyrics()
 
 #----------------------------------------------------------------#
 
-scrub_lyrics = json.load(open('Lyrics_PowerCorruptionLies.json'))
+raw_lyrics = json.load(open('Lyrics_PowerCorruptionLies.json'))
 
-scrub_lyrics = scrub_lyrics.get('tracks')
-scrub_lyrics = pd.json_normalize(scrub_lyrics)
+raw_lyrics = raw_lyrics.get('tracks')
+raw_lyrics = pd.json_normalize(raw_lyrics)
 
-scrub_lyrics = scrub_lyrics[['song.title', 'song.lyrics']]
+raw_lyrics = raw_lyrics[['song.title', 'song.lyrics']]
 
-scrub_lyrics['song.title'] = scrub_lyrics['song.title'].str.replace('by New Order', '', regex=True)
+def clean_lyrics(text):
+    text = text.str.replace('by New Order', '',)
+    text = text.str.replace('You might also like', '')
+    text = text.str.replace('^.*(?:...)Lyrics', '', regex=True)
+    text = text.str.replace('\d+' + 'Embed', '', regex=True)
+    text = text.str.replace('Embed', '', regex=True)
+    text = text.str.replace('\n', ' ', regex=True)
+    text = text.str.strip()
+    return text
 
-scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('^.*(?:...)Lyrics', '', regex=True)
-scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('\d+' + 'Embed', '', regex=True)
-scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('Embed', '', regex=True)
-scrub_lyrics['song.lyrics'] = scrub_lyrics['song.lyrics'].str.replace('\n', ' ', regex=True)
+scrubbed_lyrics = raw_lyrics.apply(clean_lyrics)
 
-album = album_feat.join(scrub_lyrics).rename(columns={'track_name': 'Title',
-                                                      'danceability': 'Danceability',
-                                                      'energy': 'Energy',
-                                                      'speechiness': 'Speechiness',
-                                                      'song.lyrics': 'Lyrics'})
+album = album_feat.join(scrubbed_lyrics).rename(columns={'track_name': 'Title',
+                                                         'danceability': 'Danceability',
+                                                         'energy' : 'Energy',
+                                                         'speechiness': 'Speechiness',
+                                                         'song.lyrics': 'Lyrics'})
 
 album.drop('song.title', axis=1, inplace=True)
 
