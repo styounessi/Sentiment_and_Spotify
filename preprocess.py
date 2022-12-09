@@ -111,13 +111,13 @@ trainer = Trainer(model=model)
 
 lyrics = album['Lyrics'].tolist()
 
-token_txt = tokenizer(lyrics, 
-                      truncation=True, 
-                      padding=True)
+token_lyrics = tokenizer(lyrics, 
+                         truncation=True, 
+                         padding=True)
 
-input_txt = DataSet(token_txt)
+input_lyrics = DataSet(token_lyrics)
 
-sentiment = trainer.predict(input_txt)
+sentiment = trainer.predict(input_lyrics)
 
 #----------------------------------------------------------------#
 
