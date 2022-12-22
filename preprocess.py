@@ -88,7 +88,7 @@ album = album_feat.join(scrubbed_lyrics).rename(columns={'track_name': 'Title',
                                                          'speechiness': 'Speechiness',
                                                          'song.lyrics': 'Lyrics'})
 
-album.drop('song.title', axis=1, inplace=True)
+album = album.drop('song.title', axis=1)
 
 #----------------------------------------------------------------#
 
