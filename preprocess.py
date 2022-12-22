@@ -133,7 +133,7 @@ neutral = []
 sadness = []
 surprise = []
 
-for i in range(len(lyrics)):
+for i in enumerate(lyrics):
     anger.append(score[i][0])
     disgust.append(score[i][1])
     fear.append(score[i][2])
