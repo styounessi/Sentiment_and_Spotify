@@ -6,10 +6,6 @@ import pandas as pd
 import lyricsgenius as genius
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer
 
-abs = os.path.abspath(__file__)
-dir = os.path.dirname(abs)
-os.chdir(dir)
-
 #----------------------------------------------------------------#
 
 sp_client_id = open('.client_id', 'r')
