@@ -14,6 +14,7 @@ You can install any of the required libraries using `pip` like in the example be
 - [NumPy](https://pypi.org/project/numpy/)
 - [LyricsGenius](https://pypi.org/project/lyricsgenius/)
 - [Transformers](https://pypi.org/project/transformers/)
+- [Jupyter](https://pypi.org/project/jupyterlab/)
 
 You will also need access to the [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) and [Genius](https://docs.genius.com/) APIs. 
 
