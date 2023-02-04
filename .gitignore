@@ -1,0 +1,11 @@
+# API Keys
+.client_id
+.client_secret
+.genius_token
+
+# Jupyter Checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Model trainer temp folder
+tmp_trainer/
