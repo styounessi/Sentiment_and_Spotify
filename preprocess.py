@@ -77,10 +77,13 @@ raw_lyrics = raw_lyrics[['song.title', 'song.lyrics']]
 
 def clean_lyrics(text):
     '''
-    Scraped lyrics from LyricsGenius often still have strings that must be scrubbed.
-
-    This function scrubs unnecessary left over text from this album's lyrics since each
-    word will need to be tokenized later.
+    Scrub unnecessary strings from the scraped lyrics.
+    
+    Parameters:
+        text (str): The text of scraped lyrics.
+    
+    Returns:
+        str: The cleaned text of the scraped lyrics.
     '''
     text = text.str.replace('by New Order', '',)
     text = text.str.replace('You might also like', '')
@@ -107,29 +110,40 @@ album = album.drop('song.title', axis=1)
 #-----------------------Define Tokenized DataSet Class-----------------------#
 
 class DataSet:
-    '''Defines class DataSet which represents a dataset of tokenized text data.'''
+    '''
+    Class which represents a dataset of tokenized text data.
+    
+    Attributes:
+        token_txt (dict): A dictionary containing tokenized text data. 
+    '''
     
     def __init__(self, token_txt):
         '''
-        The constructor of this DataSet class takes the argument below.
+        Initialize the DataSet object with the tokenized text data.
 
-        token_txt:
-            A dictionary containing tokenized text data
+        Parameters:
+            token_txt (dict): A dictionary containing the tokenized text data.
         '''
         self.token_txt = token_txt
     
     def __len__(self):
         '''
-        Returns the length of the input_ids component of the token_txt data.
+        Return the length of the input_ids component of the token_txt data.
+
+        Returns:
+            int: The length of the input_ids component of the token_txt data.
         '''
         return len(self.token_txt['input_ids'])
     
     def __getitem__(self, idx):
         '''
-        Returns a dictionary containing the values of the token_txt data at the given index.
+        Retrieve the values at the given index.
 
-        idx:
-            The index of the values to retrieve
+        Parameters:
+            idx (int): The index of the values to retrieve.
+
+        Returns:
+            dict: A dictionary containing the values at the given index.
         '''
         return {k: v[idx] for k, v in self.token_txt.items()}
 
@@ -184,7 +198,7 @@ model_result = pd.DataFrame(list(zip(label, anger, disgust, fear, joy,
 
 model_result['Sentiment'] = model_result['Sentiment'].str.capitalize()
 
-#-----------------------Finalize Resuls DataFrame-----------------------#
+#-----------------------Finalize Resuls-----------------------#
 
 # Final merge between sentiment results DataFrame and previous album DataFrame
 final_result = album.merge(model_result, on='Lyrics')
