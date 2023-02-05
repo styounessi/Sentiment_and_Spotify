@@ -111,7 +111,7 @@ album = album.drop('song.title', axis=1)
 
 class DataSet:
     '''
-    Class which represents a dataset of tokenized text data.
+    Represents a dataset of tokenized text data.
     
     Attributes:
         token_txt (dict): A dictionary containing tokenized text data. 
