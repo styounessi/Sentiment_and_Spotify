@@ -79,7 +79,7 @@ def clean_lyrics(text):
     '''
     Scrub unnecessary strings from the scraped lyrics.
     
-    Parameters:
+    Args:
         text (str): The text of scraped lyrics.
     
     Returns:
@@ -121,7 +121,7 @@ class DataSet:
         '''
         Initialize the DataSet object with the tokenized text data.
 
-        Parameters:
+        Args:
             token_txt (dict): A dictionary containing the tokenized text data.
         '''
         self.token_txt = token_txt
@@ -139,7 +139,7 @@ class DataSet:
         '''
         Retrieve the values at the given index.
 
-        Parameters:
+        Args:
             idx (int): The index of the values to retrieve.
 
         Returns:
