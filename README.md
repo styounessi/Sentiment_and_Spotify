@@ -21,7 +21,7 @@ You will also need access to the [Spotify](https://developer.spotify.com/documen
 Any suitable model can be used from [🤗 Hugging Face](https://huggingface.co/) with some modifications but `j-hartmann/emotion-english-distilroberta-base` is used in this case.
 
 ## Power, Corruption, & Lies by New Order
-![PCL by New Order album art](https://cps-static.rovicorp.com/3/JPG_500/MI0003/239/MI0003239337.jpg)
+![PCL by New Order album art](https://crypticrock.com/wp-content/uploads/2018/05/new-order.jpg)
 
 The album used is [*Power, Corruption & Lies*](https://en.wikipedia.org/wiki/Power,_Corruption_%26_Lies) by [New Order](https://en.wikipedia.org/wiki/New_Order_(band)). The original track list is used with these eight tracks:
 1. Age of Consent 
