@@ -180,13 +180,13 @@ surprise = []
 
 # Appends the corresponding emotional score from list of scores to lyrics list
 for i, lyric in enumerate(lyrics):
-    anger.append(scores[i][0])
-    disgust.append(scores[i][1])
-    fear.append(scores[i][2])
-    joy.append(scores[i][3])
-    neutral.append(scores[i][4])
-    sadness.append(scores[i][5])
-    surprise.append(scores[i][6])
+       anger.append(scores[i][0])
+       disgust.append(scores[i][1])
+       fear.append(scores[i][2])
+       joy.append(scores[i][3])
+       neutral.append(scores[i][4])
+       sadness.append(scores[i][5])
+       surprise.append(scores[i][6])
 
 # Convert results to DataFrame and rename column headers
 model_result = pd.DataFrame(list(zip(label, anger, disgust, fear, joy,
